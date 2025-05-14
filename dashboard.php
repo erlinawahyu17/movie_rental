@@ -55,15 +55,18 @@ include '.includes/toast_notification.php';
                 <i class="bx bx-dots-vertical-rounded"></i>
              </button>
              <!-- Menu dropdown -->
+              
              <div class="dropdown-menu">
                 <!-- Pilihan Edit -->
                  <a href="edit_post.php?post_id=<?= $post['id_post']; ?>" class="dropdown-item">
                     <i class="bx bx-edit-alt me-2"></i> Edit
                  </a>
+                 
                  <!-- Pilihan Delete -->
                  <a href="#" class="dropdown-item" data-bs-toggle="modal"
                  data-bs-target="#deletePost_<?= $post['id_post']; ?>">
                     <i class="bx bx-trash me-2"></i> Delete
+
                  </a>
             </div>
         </div>
@@ -103,5 +106,5 @@ include '.includes/toast_notification.php';
 </div>
 
 <?php
-include ("'includes/footer.php");
+include (".includes/footer.php");
 ?>
