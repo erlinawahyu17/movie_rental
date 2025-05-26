@@ -55,7 +55,6 @@ include '.includes/toast_notification.php';
                 <i class="bx bx-dots-vertical-rounded"></i>
              </button>
              <!-- Menu dropdown -->
-              
              <div class="dropdown-menu">
                 <!-- Pilihan Edit -->
                  <a href="edit_post.php?post_id=<?= $post['id_post']; ?>" class="dropdown-item">
@@ -106,5 +105,5 @@ include '.includes/toast_notification.php';
 </div>
 
 <?php
-include ("'includes/footer.php");
+include (".includes/footer.php");
 ?>
