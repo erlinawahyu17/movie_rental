@@ -1,7 +1,7 @@
 <?php
 include "config.php";
 
-$result = mysqli_query($conn, "SELECT * FROM kategori");
+$result = mysqli_query($conn, "SELECT * FROM categories");
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@ $result = mysqli_query($conn, "SELECT * FROM kategori");
 </html><?php
 include "config.php";
 
-$result = mysqli_query($conn, "SELECT * FROM kategori");
+$result = mysqli_query($conn, "SELECT * FROM categories");
 ?>
 <!DOCTYPE html>
 <html>
