@@ -1,9 +1,10 @@
 <?php
+require_once 'config.php'; // koneksi ke database
 include (".includes/header.php");
 $title = "Dashboard";
-// Menyertakan file untuk menampilkan notifikasi (jika ada)
 include '.includes/toast_notification.php';
 ?>
+
 <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Card untuk menampilkan tabel postingan -->
      <div class="card">
@@ -19,11 +20,11 @@ include '.includes/toast_notification.php';
                     <table id="datatable" class="table table-hover">
                         <thead>
                             <tr class="text-center">
-                              <th width="50px">#</th>
-                              <th>Judul Post</th>
-                              <th>Penulis</th>  
-                              <th>Kategori</th>      
-                              <th width="150px">Pilihan</th>
+                              <th width="50px">No</th>
+                              <th>Film id</th>
+                              <th>Judul</th>  
+                              <th>Genre</th>      
+                              <th width="150px">Tahun Rilis</th>
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
@@ -35,8 +36,10 @@ include '.includes/toast_notification.php';
   $query = "SELECT posts.*, users.name as user_name,
   categories.category_name FROM posts
   INNER JOIN users ON posts.user_id = users.user_id
-  LEFT JOIN categories ON post.category_id = categories.category_id
+  LEFT JOIN categories ON posts.category_id = categories.category_id
   WHERE posts.user_id = $userId";
+  
+  $userId = $_SESSION['user_id']; // jika menggunakan session
   // Eksekusi query
   $exec = mysqli_query($conn, $query);
 

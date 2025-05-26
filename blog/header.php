@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Blog &mdash; IdeKreatif</title>
+  <title>Blog &mdash; Movie_Rental</title>
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -22,7 +22,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span>IdeKreatif</span>
+        <span>Movie_Rental</span>
       </a>
       <nav id="navbar" class="navbar">
         <i class="bi bi-list mobile-nav-toggle"></i>
