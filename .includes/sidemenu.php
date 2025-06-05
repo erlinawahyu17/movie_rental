@@ -14,65 +14,29 @@
     <li class="menu-item">
       <a href="dashboard.php" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
-        <div data-i18n="Analytics">Dashboard</div>
+        <div data-i18n="Analytics">FILM</div>
       </a>
     </li>
     <!-- Forms & Tables -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Pilihan</span></li>
+    <li class="menu-header small text-uppercase"><span class="menu-header-text">Ayo Nonton Bareng</span></li>
     <!-- Forms -->
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-detail"></i>
-        <div data-i18n="Posts">Film</div>
+        <div data-i18n="Posts">Menu</div>
       </a>
       <ul class="menu-sub">
         <li class="menu-item">
-          <a href="posts.php" class="menu-link">
-            <div data-i18n="Basic Inputs">Post Baru</div>
+          <a href="film.php" class="menu-link">
+            <div data-i18n="Basic Inputs">List Pelanggan</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="kategori.php" class="menu-link">
-            <div data-i18n="Input groups">Kategori</div>
+          <a href="penyewaan.php" class="menu-link">
+            <div data-i18n="Input groups">List Penyewaan</div>
           </a>
         </li>
       </ul>
-      <li class="menu-item">
-  <a href="javascript:void(0);" class="menu-link menu-toggle">
-    <i class="menu-icon tf-icons bx bx-detail"></i>
-    <div data-i18n="Posts">Pelanggan</div>
-  </a>
-  <ul class="menu-sub">
-    <li class="menu-item">
-      <a href="posts.php" class="menu-link">
-        <div data-i18n="Basic Inputs">Post Baru</div>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a href="kategori.php" class="menu-link">
-        <div data-i18n="Input groups">Kategori</div>
-      </a>
-    </li>
-  </ul>
-</li> <!-- Tambahin ini untuk menutup pelanggan -->
-
-<!-- Penyewaan -->
-<li class="menu-item">
-  <a href="javascript:void(0);" class="menu-link menu-toggle">
-    <i class="menu-icon tf-icons bx bx-detail"></i>
-    <div data-i18n="Posts">Penyewaan</div>
-  </a>
-  <ul class="menu-sub">
-    <li class="menu-item">
-      <a href="posts.php" class="menu-link">
-        <div data-i18n="Basic Inputs">Post Baru</div>
-      </a>
-    </li>
-    <li class="menu-item">
-      <a href="kategori.php" class="menu-link">
-        <div data-i18n="Input groups">Kategori</div>
-      </a>
-    </li>
   </ul>
 </li>
   </ul>
