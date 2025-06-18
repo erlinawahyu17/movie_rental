@@ -6,7 +6,6 @@ include '.includes/toast_notification.php';
 ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <!-- SECTION: Data Penyewaan Film -->
     <div class="card">
         <div class="card-header">
             <h5>Data Penyewaan Film</h5>
@@ -19,6 +18,7 @@ include '.includes/toast_notification.php';
                             <th>No</th>
                             <th>Nama Pelanggan</th>
                             <th>Judul Film</th>
+                            <th>Genre</th>
                             <th>Tanggal Sewa</th>
                             <th>Tanggal Kembali</th>
                             <th>Aksi</th>
@@ -26,18 +26,21 @@ include '.includes/toast_notification.php';
                     </thead>
                     <tbody>
                         <?php
-                        $query = "SELECT penyewaan.*, film.judul_film 
+                        $query = "SELECT penyewaan.penyewaan_id, penyewaan.nama_pelanggan, 
+                                        film.judul_film, film.genre, 
+                                        penyewaan.tanggal_sewa, penyewaan.tanggal_kembali
                                   FROM penyewaan 
-                                  JOIN film ON penyewaan.film_id = film.film_id";
+                                  LEFT JOIN film ON penyewaan.film_id = film.film_id";
                         $result = mysqli_query($conn, $query);
                         $no = 1;
                         while ($row = mysqli_fetch_assoc($result)) :
-                            $penyewaan_id = $row['penyewaan_id']; // pastikan kolom ini ada di tabel penyewaan
+                            $penyewaan_id = $row['penyewaan_id'];
                         ?>
                         <tr class="text-center">
                             <td><?= $no++; ?></td>
-                            <td><?= $row['nama_pelanggan']; ?></td>
-                            <td><?= $row['judul_film']; ?></td>
+                            <td><?= htmlspecialchars($row['nama_pelanggan']); ?></td>
+                            <td><?= htmlspecialchars($row['judul_film']); ?></td>
+                            <td><?= htmlspecialchars($row['genre']); ?></td>
                             <td><?= $row['tanggal_sewa']; ?></td>
                             <td><?= $row['tanggal_kembali']; ?></td>
                             <td>
@@ -46,7 +49,7 @@ include '.includes/toast_notification.php';
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="edit_film.php?penyewaan_id=<?= $penyewaan_id; ?>">
+                                        <a class="dropdown-item" href="edit_penyewaan.php?penyewaan_id=<?= $penyewaan_id; ?>">
                                             <i class="bx bx-edit-alt me-2"></i> Edit
                                         </a>
                                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#deletePenyewaan_<?= $penyewaan_id; ?>">
@@ -55,8 +58,7 @@ include '.includes/toast_notification.php';
                                     </div>
                                 </div>
 
-                                <!-- Modal Hapus -->
-                                <div class="modal fade" id="deletePenyewaan_<?= $penyewaan_id; ?>" tabindex="-1" aria-hidden="true">
+                                <div class="modal fade" id="deletePenyewaan_<?= $row['penyewaan_id']; ?>" tabindex="-1" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <form action="proses_penyewaan.php" method="POST">
                                             <div class="modal-content">
@@ -65,8 +67,8 @@ include '.includes/toast_notification.php';
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Yakin ingin menghapus penyewaan oleh <strong><?= $row['nama_pelanggan']; ?></strong>?</p>
-                                                    <input type="hidden" name="penyewaan_id" value="<?= $penyewaan_id; ?>">
+                                                    <p>Yakin ingin menghapus penyewaan oleh <strong><?= htmlspecialchars($row['nama_pelanggan']); ?></strong>?</p>
+                                                    <input type="hidden" name="penyewaan_id" value="<?= $row['penyewaan_id']; ?>">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -86,4 +88,4 @@ include '.includes/toast_notification.php';
     </div>
 </div>
 
-<?php include(".includes/footer.php"); ?>
+<?php include('.includes/footer.php'); ?>

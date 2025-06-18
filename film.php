@@ -52,13 +52,13 @@ require_once 'config.php';
                         while ($film = mysqli_fetch_assoc($result)) {
                             echo "<tr>
                                     <td>{$no}</td>
-                                    <td>{$film['id']}</td>
+                                    <td>{$film['film_id']}</td>
                                     <td>{$film['judul_film']}</td>
                                     <td>{$film['genre']}</td>
                                     <td>{$film['tahun_rilis']}</td>
                                     <td>
-                                        <a href='edit_film.php?id={$film['id']}' class='btn btn-warning btn-sm'>Edit</a>
-                                        <a href='hapus_film.php?id={$film['id']}' class='btn btn-danger btn-sm' onclick=\"return confirm('Yakin ingin hapus film ini?');\">Hapus</a>
+                                        <a href='edit_film.php?id={$film['film_id']}' class='btn btn-warning btn-sm'>Edit</a>
+                                        <a href='hapus_film.php?id={$film['film_id']}' class='btn btn-danger btn-sm' onclick=\"return confirm('Yakin ingin hapus film ini?');\">Hapus</a>
                                     </td>
                                   </tr>";
                             $no++;
