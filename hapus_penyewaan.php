@@ -1,18 +1,19 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 
-if (!isset($_GET['id'])) {
-  die("Parameter tidak ditemukan.");
-}
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $cek = mysqli_query($conn, "SELECT * FROM penyewaan WHERE penyewaan_id = $id");
 
-$id = $_GET['id'];
-
-$query = mysqli_query($conn, "DELETE FROM penyewaan WHERE id = '$id'");
-
-if ($query) {
-  header("Location: penyewaan.php");
-  exit;
+    if (mysqli_num_rows($cek) === 0) {
+        echo "<script>alert('Data tidak ditemukan');window.location='dashboard.php';</script>";
+    } else {
+        $hapus = mysqli_query($conn, "DELETE FROM penyewaan WHERE penyewaan_id = $id");
+        echo $hapus ?
+            "<script>alert('Data berhasil dihapus');window.location='dashboard.php';</script>" :
+            "<script>alert('Gagal menghapus data');window.location='dashboard.php';</script>";
+    }
 } else {
-  echo "Gagal menghapus data: " . mysqli_error($conn);
+    echo "<script>alert('Akses tidak sah');window.location='dashboard.php';</script>";
 }
 ?>

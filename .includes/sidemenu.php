@@ -28,7 +28,7 @@
       <ul class="menu-sub">
         <li class="menu-item">
           <a href="film.php" class="menu-link">
-            <div data-i18n="Basic Inputs">List Pelanggan</div>
+            <div data-i18n="Basic Inputs">List Film</div>
           </a>
         </li>
         <li class="menu-item">
